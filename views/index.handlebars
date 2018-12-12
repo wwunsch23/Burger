@@ -1,15 +1,11 @@
-<h1 class="text-center">Eat Da Burger!</h1>
-
-<div class="container">
-
     <div class="row">
         <div class="col-md-5">
             <h2 id="available-burgers" class="text-center">Available Burgers</h2>
 
-            <ul class="list-group list-group-flush">
+            <ul class="list-group">
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li class="list-group-item">{{burger_name}}<button data-devoured="{{this.devoured}}" data-id="{{this.id}}" class="btn btn-warning ml-3 eat">Devour It!</button></li>
+                <li class="list-group-item list-group-item-warning d-flex justify-content-between">{{burger_name}}<button data-devoured="{{this.devoured}}" data-id="{{this.id}}" class="btn btn-warning eat">Devour It!</button></li>
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -20,10 +16,10 @@
         <div class="col-md-5">
             <h2 id="devoured-burgers" class="text-center">Devoured Burgers</h2>
 
-            <ul class="list-group list-group-flush">
+            <ul class="list-group">
                 {{#each burgers}}
                 {{#if devoured}}
-                <li class="list-group-item">{{burger_name}}<button data-devoured="{{this.devoured}}" data-id="{{this.id}}" class="btn btn-success ml-3 eat">Eat It Again?</button></li>
+                <li class="list-group-item list-group-item-secondary d-flex justify-content-between">{{burger_name}}<button data-devoured="{{this.devoured}}" data-id="{{this.id}}" class="btn btn-success eat">Eat It Again?</button></li>
                 {{/if}}
                 {{/each}}
             </ul>
