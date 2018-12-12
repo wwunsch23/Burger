@@ -14,7 +14,6 @@ var burger = {
     });
   },
   updateOne: function(updateValue, paramId, controllerCallback) {
-    console.log("Model Values: ", updateValue, paramId);
     orm.updateOne(updateValue, paramId, function(result) {
       controllerCallback(result);
     });

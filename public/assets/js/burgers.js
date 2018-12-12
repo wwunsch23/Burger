@@ -12,11 +12,8 @@ $(function () {
             };
 
             // Send the POST request.
-            $.post("/api/burgers", {
-                type: "POST",
-                data: newBurger
-            }).then(
-                function () {
+            $.post("/api/burgers", newBurger)
+            .then(function () {
                     // Reload the page to get the updated list
                     location.reload();
                 }
