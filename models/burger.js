@@ -14,15 +14,11 @@ var burger = {
     });
   },
   updateOne: function(updateValue, paramId, controllerCallback) {
+    console.log("Model Values: ", updateValue, paramId);
     orm.updateOne(updateValue, paramId, function(result) {
       controllerCallback(result);
     });
   },
-//   delete: function(condition, controllerCallback) {
-//     orm.delete("burgers", condition, function(res) {
-//       controllerCallback(res);
-//     });
-//   }
 };
 
 // Export the database functions for the controller (burgers_controller.js).

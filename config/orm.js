@@ -56,8 +56,7 @@ var orm = {
       function (err, result) {
         if (err) {
           throw err;
-        }
-        console.log(result);
+        };
         modelCallback(result);
       });
   },
@@ -66,12 +65,7 @@ var orm = {
       [updateValue, paramId],
       function (err, result) {
         if (err) {
-          // If an error occurred, send a generic server failure
-          return res.status(500).end();
-        }
-        else if (result.changedRows === 0) {
-          // If no rows were changed, then the ID must not exist, so 404
-          return result.status(404).end();
+          throw err;
         }
         modelCallback(result);
       });
